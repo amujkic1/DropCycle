@@ -1,6 +1,6 @@
 # DropCycle
 
-This Python application recognizes different types of garbage (e.g., plastic bottles, glass, etc.) using an external API. The app allows users to upload or capture images, processes them through the API, and returns the type of garbage detected. The app also provides recycling tips based on the recognized type and maintains a history of classifications for future reference.
+This Python application recognizes different types of waste (e.g., plastic bottles, glass, etc.) using an external API. The app allows users to upload or capture images, processes them through the API, and returns the type of waste detected. The app also provides recycling tips based on the recognized type and maintains a history of classifications for future reference.
 
 ## Features
 
@@ -9,4 +9,4 @@ This Python application recognizes different types of garbage (e.g., plastic bot
 - **Result Display**: Show recognized garbage types along with recycling tips.
 - **Classification History**: Keep a log of past classifications.
 
-This app uses the [Garbage Recognition API](https://universe.roboflow.com/projectverba/yolo-waste-detection/model/1) to classify garbage types based on uploaded or captured images. The API processes the image and returns the identified garbage type such as plastic bottles, glass, paper, etc.
+This app uses the [Waste Detection API](https://universe.roboflow.com/projectverba/yolo-waste-detection/model/1) to classify waste types based on uploaded or captured images. The API processes the image and returns the identified garbage type such as plastic bottles, glass, paper, etc.
