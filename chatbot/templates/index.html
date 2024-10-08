@@ -83,7 +83,6 @@
 
             formData.append('image', file);
 
-            // Send the file to the backend (replace this URL with your Python backend API)
             fetch('http://127.0.0.1:5000/api/sort-garbage', {
                 method: 'POST',
                 body: formData
