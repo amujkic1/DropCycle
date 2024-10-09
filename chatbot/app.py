@@ -2,8 +2,6 @@ from flask import Flask, render_template, jsonify, request
 from imagedet import CLIENT
 import os
 
-# Flask constructor takes the name of 
-# current module (__name__) as argument.
 app = Flask(__name__)
 
 # Create a directory to save uploaded images
@@ -28,8 +26,6 @@ def sort_garbage():
     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
     file.save(file_path)
 
-    print("sorting")
-    # instead of hardcoding the image use the one from html formData
     result = CLIENT.infer(file_path, model_id="yolo-waste-detection/1")
     detected_class = result['predictions'][0]['class']
     
