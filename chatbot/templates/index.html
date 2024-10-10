@@ -21,6 +21,23 @@
             color: #333;
         }
 
+        #images-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-item {
+            width: 18%;
+            margin: 10px 0;
+        }
+
+        .image-item img {
+            width: 80%;
+            height: auto;
+        }
+
         #upload-form {
             background-color: #fff;
             padding: 20px;
@@ -60,7 +77,25 @@
 <body>
 
     <h1>Garbage Sorting Web App</h1>
-    
+
+    <div id="images-container">
+        <div class="image-item">
+            <img src="/static/plastic.png" alt="Garbage Image 1">
+        </div>
+        <div class="image-item">
+            <img src="/static/metal.png" alt="Garbage Image 1">
+        </div>
+        <div class="image-item">
+            <img src="/static/glass.png" alt="Garbage Image 1">
+        </div>
+        <div class="image-item">
+            <img src="/static/paper.png" alt="Garbage Image 1">
+        </div>
+        <div class="image-item">
+            <img src="/static/organic.png" alt="Garbage Image 1">
+        </div>
+    </div>
+
     <form id="upload-form" enctype="multipart/form-data">
         <h2>Upload an Image</h2>
         <input type="file" id="image" name="image" accept="image/*" required>
