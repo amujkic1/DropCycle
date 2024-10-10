@@ -21,6 +21,23 @@
             color: #333;
         }
 
+        #images-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-item {
+            width: 18%;
+            margin: 10px 0;
+        }
+
+        .image-item img {
+            width: 120px;
+            height: 180px;
+        }
+
         #upload-form {
             background-color: #fff;
             padding: 20px;
@@ -55,12 +72,44 @@
             padding: 10px;
             border-radius: 5px;
         }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        .animate {
+            animation: scale 0.3s ease-in-out forwards, shake 0.5s ease-in-out infinite;
+        }
+
     </style>
 </head>
 <body>
 
     <h1>Garbage Sorting Web App</h1>
-    
+
+    <div id="images-container">
+        <div class="image-item" id="plastic">
+            <img src="/static/plastic.png" alt="Garbage Image 1">
+        </div>
+        <div class="image-item" id="metal">
+            <img src="/static/metal.png" alt="Garbage Image 1">
+        </div>
+        <div class="image-item" id="glass">
+            <img src="/static/glass.png" alt="Garbage Image 1">
+        </div>
+        <div class="image-item" id="paper">
+            <img src="/static/paper.png" alt="Garbage Image 1">
+        </div>
+        <div class="image-item" id="organic">
+            <img src="/static/organic.png" alt="Garbage Image 1">
+        </div>
+    </div>
+
     <form id="upload-form" enctype="multipart/form-data">
         <h2>Upload an Image</h2>
         <input type="file" id="image" name="image" accept="image/*" required>
@@ -91,6 +140,10 @@
             .then(response => response.json())
             .then(data => {
                 document.getElementById('result').innerHTML = `<p>Detected garbage type: ${data.type}</p>`;
+                if(data.type=="Organic")
+                    console.log("Organic")
+                    const image = document.getElementById('organic');
+                    image.classList.add('animate');
             })
             .catch(error => {
                 console.error('Error:', error);
