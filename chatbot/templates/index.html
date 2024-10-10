@@ -34,8 +34,8 @@
         }
 
         .image-item img {
-            width: 80%;
-            height: auto;
+            width: 120px;
+            height: 180px;
         }
 
         #upload-form {
@@ -72,6 +72,20 @@
             padding: 10px;
             border-radius: 5px;
         }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        .animate {
+            animation: scale 0.3s ease-in-out forwards, shake 0.5s ease-in-out infinite;
+        }
+
     </style>
 </head>
 <body>
@@ -79,19 +93,19 @@
     <h1>Garbage Sorting Web App</h1>
 
     <div id="images-container">
-        <div class="image-item">
+        <div class="image-item" id="plastic">
             <img src="/static/plastic.png" alt="Garbage Image 1">
         </div>
-        <div class="image-item">
+        <div class="image-item" id="metal">
             <img src="/static/metal.png" alt="Garbage Image 1">
         </div>
-        <div class="image-item">
+        <div class="image-item" id="glass">
             <img src="/static/glass.png" alt="Garbage Image 1">
         </div>
-        <div class="image-item">
+        <div class="image-item" id="paper">
             <img src="/static/paper.png" alt="Garbage Image 1">
         </div>
-        <div class="image-item">
+        <div class="image-item" id="organic">
             <img src="/static/organic.png" alt="Garbage Image 1">
         </div>
     </div>
@@ -126,6 +140,10 @@
             .then(response => response.json())
             .then(data => {
                 document.getElementById('result').innerHTML = `<p>Detected garbage type: ${data.type}</p>`;
+                if(data.type=="Organic")
+                    console.log("Organic")
+                    const image = document.getElementById('organic');
+                    image.classList.add('animate');
             })
             .catch(error => {
                 console.error('Error:', error);
