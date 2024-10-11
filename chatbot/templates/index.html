@@ -21,6 +21,26 @@
             color: #333;
         }
 
+        #waste-icons-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: nowrap; 
+            width: 100%;
+        }
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .icon img {
+            width: 50px; /* Adjust as needed for icon size */
+            height: 50px;
+        }
+
         #images-container {
             display: flex;
             justify-content: space-around;
@@ -124,7 +144,24 @@
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
     </div>
-      
+
+    <div id="waste-icons-container">
+        <div class="icon" id="plastic-waste">
+            <img src="/static/plastic-waste.png" alt="Garbage Icon 1">
+        </div>
+        <div class="icon" id="metal-waste">
+            <img src="/static/tin-waste.png" alt="Garbage Icon 1">
+        </div>
+        <div class="icon" id="glass-waste">
+            <img src="/static/glass-waste.png" alt="Garbage Icon 1">
+        </div>
+        <div class="icon" id="paper-waste">
+            <img src="/static/paper-waste.png" alt="Garbage Icon 1">
+        </div>
+        <div class="icon" id="organic-waste">
+            <img src="/static/apple-waste.png" alt="Garbage Icon 1">
+        </div>
+    </div>
 
     <div id="images-container">
         <div class="image-item" id="plastic">
